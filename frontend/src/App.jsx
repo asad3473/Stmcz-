@@ -1,24 +1,44 @@
 import React from 'react'
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
-import Navbar from './components/commonpages/Navbar'
 
-const MainLayout=()=>{
-  return(
+import Navbar from './components/commonpages/Navbar'
+import Footer from './components/commonpages/Footer'
+
+import Home from './pages/Home'
+import Apply from './pages/Apply'
+import EmployeeSupport from './pages/EmployeeSupport'
+import TieredSystem from './pages/TieredSystem'
+
+const MainLayout = () => {
+  return (
     <>
-      <Navbar/>
-      <Outlet/>
-      <h1>Footer</h1>
+      <Navbar />
+      <Outlet />
+      <Footer />
     </>
   )
 }
-const routes=createBrowserRouter([
-  
+
+const routes = createBrowserRouter([
   {
-    element:<MainLayout/>,
-    children:[
+    element: <MainLayout />,
+    children: [
       {
-        path:'/',element:<h1>Home header</h1>
+        index: true,
+        element: <Home />
       },
+      {
+        path: 'apply',
+        element: <Apply />
+      },
+      {
+        path: 'employee-support',
+        element: <EmployeeSupport />
+      },
+      {
+        path: 'tiered-system',
+        element: <TieredSystem />
+      }
     ]
   }
 ])
