@@ -36,7 +36,7 @@ export const blogArray = [
   },
   {
     id: 4,
-    title: "Supporting Teams Through Better Employee Guidance",
+    title: "Supporting Teams Through Better Employees Guidance",
     slug: "supporting-teams-through-better-employee-guidance",
     category: "Employee Support",
     excerpt: "When employees get practical guidance early, the whole delivery chain becomes faster and more reliable.",
