@@ -9,11 +9,13 @@ import Apply from './pages/Apply'
 import EmployeeSupport from './pages/EmployeeSupport'
 import TieredSystem from './pages/TieredSystem'
 import About from './pages/About'
+import ScrollToTop from './pages/ScrollToTop'
 
 const MainLayout = () => {
   return (
     <>
       <Navbar />
+      <ScrollToTop/>
       <Outlet />
       <Footer />
     </>
