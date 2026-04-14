@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import Apply from './pages/Apply'
 import EmployeeSupport from './pages/EmployeeSupport'
 import TieredSystem from './pages/TieredSystem'
+import About from './pages/About'
 
 const MainLayout = () => {
   return (
@@ -38,6 +39,10 @@ const routes = createBrowserRouter([
       {
         path: 'tiered-system',
         element: <TieredSystem />
+      },
+      {
+        path: 'about',
+        element: <About />
       }
     ]
   }

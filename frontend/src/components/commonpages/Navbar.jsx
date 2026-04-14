@@ -29,12 +29,7 @@ const Navbar = () => {
         
         {/* LOGO SECTION */}
         <Link to="/" className="group flex flex-col transition-transform active:scale-95">
-          <h1 className="text-[#B8860B] (gold) text-2xl tracking-[0.2em] font-black m-0 leading-tight group-hover:text-gold-light transition-colors">
-            STMCZ
-          </h1>
-          <p className="text-black text-[10px] uppercase tracking-widest m-0 opacity-70 font-bold">
-            Dual-Discipline Specialists
-          </p>
+          <img src="/logo.jpeg" alt="STMCZ Logo" className='h-10 w-10 rounded-md'/>
         </Link>
 
         {/* DESKTOP NAV */}

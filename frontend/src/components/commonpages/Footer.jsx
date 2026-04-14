@@ -6,7 +6,7 @@ function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-[#614F12] text-white/90">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-zinc-900 text-white/90">
       {/* Subtle Texture Overlay */}
       <div className="absolute inset-0 -z-10 opacity-30 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.1),_transparent_50%)]" />
 
