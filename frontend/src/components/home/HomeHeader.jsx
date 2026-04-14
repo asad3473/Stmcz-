@@ -9,7 +9,7 @@ const HomeHeader = () => {
   const slides = [
     {
       title: "Turning Complexity Into Clarity",
-      description: "Dual-Discipline Specialists dedicated to driving your business progress through expert management.",
+      description: "Dual Discipline Specialists dedicated to driving your business progress through expert management.",
       image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
     },
     {
