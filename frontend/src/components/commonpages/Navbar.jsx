@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <header className="w-full sticky top-0 z-50 font-sans shadow-xl">
       {/* MAIN NAVBAR */}
-      <nav className="bg-white py-4 px-[5%] flex items-center justify-between border-b border-gold/10">
+      <nav className="relative bg-white py-4 px-[5%] flex items-center justify-between border-b border-gold/10">
         
         {/* LOGO SECTION */}
         <Link to="/" className="group flex flex-col transition-transform active:scale-95">
@@ -33,7 +33,7 @@ const Navbar = () => {
         </Link>
 
         {/* DESKTOP NAV */}
-        <ul className="hidden md:flex items-center gap-10 m-0 p-0 list-none text-black">
+        <ul className="hidden lg:flex lg:absolute lg:left-1/2 lg:-translate-x-1/2 items-center gap-10 m-0 p-0 list-none text-black">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About</NavLink>
           
@@ -69,9 +69,16 @@ const Navbar = () => {
           <NavLink to="/blog">Blog</NavLink>
         </ul>
 
+        <Link
+          to="/apply"
+          className="hidden lg:inline-flex items-center rounded-full bg-linear-to-br from-yellow-600 via-yellow-500 to-yellow-400 px-5 py-2 text-sm font-bold text-zinc-950 transition hover:shadow-[0_0_20px_rgba(234,179,8,0.35)]"
+        >
+          Get Started
+        </Link>
+
         {/* MOBILE MENU TOGGLE */}
         <button 
-          className="md:hidden cursor-pointer text-[#B8860B] p-2 hover:bg-[#B8860B]/10 rounded-lg transition-colors" 
+          className="lg:hidden cursor-pointer text-[#B8860B] p-2 hover:bg-[#B8860B]/10 rounded-lg transition-colors" 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -80,7 +87,7 @@ const Navbar = () => {
 
       {/* MOBILE MENU OVERLAY */}
       <div className={`
-        fixed inset-0 bg-white z-[-1] md:hidden transition-all duration-500 ease-in-out
+        fixed inset-0 bg-white z-[-1] lg:hidden transition-all duration-500 ease-in-out
         ${isMobileMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'}
       `}>
         <div className="flex flex-col h-full pt-24 px-8 pb-10 overflow-y-auto">
@@ -120,7 +127,7 @@ const NavLink = ({ to, children }) => (
     >
       {children}
       {/* Left-to-Right Underline Animation */}
-      <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#B8860B] transition-all duration-300 ease-out group-hover:w-full" />
+      <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#B8860B] transition-all duration-300 ease-out group-hover:w-full" />
     </Link>
   </li>
 );
@@ -140,7 +147,7 @@ const MobileLink = ({ to, label, onClick }) => (
   <Link 
     to={to} 
     onClick={onClick}
-    className="hover:text-[#B8860B] transition-colors block w-full active:translate-x-2 transition-transform"
+    className="block w-full transition-all hover:text-[#B8860B] active:translate-x-2"
   >
     {label}
   </Link>
