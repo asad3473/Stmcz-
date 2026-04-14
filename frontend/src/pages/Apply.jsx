@@ -1,5 +1,6 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { FaArrowRight, FaFileUpload, FaShieldAlt, FaCheckCircle, FaTimes } from 'react-icons/fa';
+import ServiceHero from '../components/services/ServiceHero'
 
 export default function Apply() {
   const [formData, setFormData] = useState({ fullName: '', email: '' });
@@ -39,47 +40,35 @@ export default function Apply() {
   };
 
   return (
-    <main className="relative min-h-screen bg-[#FFF9EB] text-[#2F2200] selection:bg-[#664A00]/20 font-sans">
-      {/* Hero Header */}
-      <header className="relative flex min-h-[50vh] w-full items-center justify-center overflow-hidden border-b border-[#664A00]/10 text-center">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80" 
-            className="h-full w-full object-cover"
-            alt="Modern Office"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#3A2A00]/90 via-[#664A00]/85 to-[#2F2200]" />
-        </div>
+    <main className="relative min-h-screen overflow-hidden bg-white font-sans text-zinc-900 selection:bg-yellow-500/30">
+      <div className="absolute left-[8%] top-28 h-44 w-44 rounded-full border border-yellow-500/25 blur-sm" />
+      <div className="absolute bottom-10 right-[10%] h-36 w-36 rotate-12 rounded-2xl bg-yellow-500/10 blur-2xl" />
 
-        <div className="relative z-10 mx-auto max-w-4xl px-6 py-20">
-          <span className="inline-block rounded-full bg-white/10 px-4 py-1 text-xs font-bold uppercase tracking-widest text-white backdrop-blur-md ring-1 ring-white/20">
-            Careers
-          </span>
-          <h1 className="mt-6 text-5xl font-bold tracking-tight text-white">
-            Join Our <span className="text-[#FFD666]">Growth</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/80">
-            We review every application personally within 48 hours. Let's build something meaningful together.
-          </p>
-        </div>
-      </header>
+      <ServiceHero
+        eyebrow="Careers"
+        titlePrefix="Join Our"
+        titleAccent="Growth"
+        description="We review every application personally within 48 hours. Let's build something meaningful together."
+        imageUrl="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80"
+        imageAlt="Modern Office"
+      />
 
       {/* Form Section */}
-      <section className="relative z-20 mx-auto -mt-20 w-full max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+      <section className="relative z-20 mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-12">
           
           <article className="lg:col-span-7">
-            <div className="h-full rounded-[2.5rem] border border-white/50 bg-white/80 p-8 shadow-2xl backdrop-blur-2xl sm:p-12 transition-all">
+            <div className="h-full rounded-xl border border-zinc-200 bg-white/90 p-8 shadow-2xl backdrop-blur-xl sm:p-12 transition-all">
               {isSubmitted ? (
-                <div className="flex h-full flex-col items-center justify-center py-12 text-center animate-in fade-in zoom-in duration-500">
-                  <div className="rounded-full bg-green-100 p-6 text-green-600 shadow-inner">
+                <div className="flex h-full flex-col items-center justify-center py-12 text-center">
+                  <div className="rounded-full bg-emerald-500/15 p-6 text-emerald-400 shadow-inner shadow-emerald-500/10">
                     <FaCheckCircle size={64} />
                   </div>
-                  <h2 className="mt-8 text-3xl font-bold text-[#3A2A00]">Application Received!</h2>
-                  <p className="mt-3 text-lg text-[#664A00]/70">Check your email for the next steps.</p>
+                  <h2 className="mt-8 text-3xl font-bold text-zinc-900">Application Received!</h2>
+                  <p className="mt-3 text-lg text-zinc-600">Check your email for the next steps.</p>
                   <button 
                     onClick={() => { setIsSubmitted(false); setFile(null); }}
-                    className="mt-10 cursor-pointer font-bold text-[#664A00] hover:text-[#3A2A00] transition-colors"
+                    className="mt-10 cursor-pointer font-bold text-yellow-500 transition-colors hover:text-yellow-400"
                   >
                     ← Submit another response
                   </button>
@@ -87,14 +76,14 @@ export default function Apply() {
               ) : (
                 <>
                   <div className="mb-10">
-                    <h2 className="text-2xl font-bold text-[#3A2A00]">Application Details</h2>
-                    <p className="text-[#664A00]/60 mt-1">Complete the form below to start your journey.</p>
+                    <h2 className="text-2xl font-bold text-zinc-900">Application Details</h2>
+                    <p className="mt-1 text-zinc-500">Complete the form below to start your journey.</p>
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid gap-6 sm:grid-cols-2">
                       <div className="space-y-2">
-                        <label htmlFor="fullName" className="text-sm font-bold text-[#664A00] ml-1">Full Name</label>
+                        <label htmlFor="fullName" className="ml-1 text-sm font-bold text-zinc-700">Full Name</label>
                         <input
                           required
                           id="fullName"
@@ -102,11 +91,11 @@ export default function Apply() {
                           value={formData.fullName}
                           onChange={handleInputChange}
                           placeholder="Jane Cooper"
-                          className="w-full rounded-2xl border border-[#664A00]/10 bg-white px-5 py-4 text-sm ring-[#664A00]/5 transition focus:border-[#664A00] focus:ring-4 outline-none"
+                          className="w-full rounded-2xl border border-zinc-300 bg-white px-5 py-4 text-sm text-zinc-900 placeholder:text-zinc-400 outline-none ring-yellow-500/20 transition focus:border-yellow-500 focus:ring-4"
                         />
                       </div>
                       <div className="space-y-2">
-                        <label htmlFor="email" className="text-sm font-bold text-[#664A00] ml-1">Email Address</label>
+                        <label htmlFor="email" className="ml-1 text-sm font-bold text-zinc-700">Email Address</label>
                         <input
                           required
                           id="email"
@@ -114,41 +103,41 @@ export default function Apply() {
                           value={formData.email}
                           onChange={handleInputChange}
                           placeholder="jane@company.com"
-                          className="w-full rounded-2xl border border-[#664A00]/10 bg-white px-5 py-4 text-sm ring-[#664A00]/5 transition focus:border-[#664A00] focus:ring-4 outline-none"
+                          className="w-full rounded-2xl border border-zinc-300 bg-white px-5 py-4 text-sm text-zinc-900 placeholder:text-zinc-400 outline-none ring-yellow-500/20 transition focus:border-yellow-500 focus:ring-4"
                         />
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <p className="text-sm font-bold text-[#664A00] ml-1">Upload Resume / CV</p>
+                      <p className="ml-1 text-sm font-bold text-zinc-700">Upload Resume / CV</p>
                       <label
                         htmlFor="cv"
                         onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
                         onDragLeave={() => setIsDragging(false)}
                         onDrop={onDrop}
-                        className={`group relative flex w-full cursor-pointer flex-col items-center justify-center gap-4 rounded-[2rem] border-2 border-dashed px-6 py-12 transition-all duration-300
+                        className={`group relative flex w-full cursor-pointer flex-col items-center justify-center gap-4 rounded-xl border-2 border-dashed px-6 py-12 transition-all duration-300
                           ${isDragging 
-                            ? 'border-[#664A00] bg-[#664A00]/10 scale-[1.01]' 
-                            : 'border-[#664A00]/20 bg-white/50 hover:border-[#664A00]/40 hover:bg-white'}`}
+                            ? 'scale-[1.01] border-yellow-500 bg-yellow-500/10' 
+                            : 'border-zinc-300 bg-white/80 hover:border-yellow-500/40 hover:bg-white'}`}
                       >
-                        <div className={`rounded-2xl p-4 transition-colors ${file ? 'bg-green-100 text-green-600' : 'bg-[#664A00]/10 text-[#664A00]'}`}>
+                        <div className={`rounded-2xl p-4 transition-colors ${file ? 'bg-emerald-500/15 text-emerald-400' : 'bg-yellow-500/10 text-yellow-500'}`}>
                           {file ? <FaCheckCircle size={28} /> : <FaFileUpload size={28} />}
                         </div>
                         
                         <div className="text-center">
-                          <span className="text-base font-bold text-[#3A2A00]">
+                          <span className="text-base font-bold text-zinc-900">
                             {file ? 'File ready to upload' : 'Click or drop your CV here'}
                           </span>
-                          <p className="mt-1 text-xs text-[#664A00]/60">PDF, DOCX up to 5MB</p>
+                          <p className="mt-1 text-xs text-zinc-500">PDF, DOCX up to 5MB</p>
                         </div>
 
                         {file && (
-                          <div className="mt-2 flex items-center gap-2 rounded-full bg-[#664A00] px-4 py-1.5 text-xs font-medium text-white animate-in slide-in-from-bottom-2">
+                          <div className="mt-2 flex items-center gap-2 rounded-full bg-zinc-900 px-4 py-1.5 text-xs font-medium text-white">
                             <span>{file.name}</span>
                             <button 
                               type="button"
                               onClick={(e) => { e.preventDefault(); setFile(null); }}
-                              className="cursor-pointer hover:text-red-300"
+                              className="cursor-pointer hover:text-red-400"
                             >
                               <FaTimes />
                             </button>
@@ -166,7 +155,7 @@ export default function Apply() {
 
                     <button
                       type="submit"
-                      className="group relative flex w-full cursor-pointer items-center justify-center gap-3 overflow-hidden rounded-2xl bg-[#664A00] py-5 text-base font-bold text-white transition-all hover:bg-[#4d3800] hover:shadow-2xl active:scale-[0.99]"
+                      className="group relative flex w-full cursor-pointer items-center justify-center gap-3 overflow-hidden rounded-2xl bg-linear-to-br from-yellow-600 via-yellow-500 to-yellow-400 py-5 text-base font-bold text-zinc-950 transition-all hover:shadow-[0_0_30px_rgba(234,179,8,0.35)] active:scale-[0.99]"
                     >
                       <span>Submit Application</span>
                       <FaArrowRight className="transition-transform group-hover:translate-x-1" />
@@ -179,28 +168,28 @@ export default function Apply() {
 
           {/* Sidebar Info */}
           <aside className="lg:col-span-5 space-y-6">
-            <div className="overflow-hidden rounded-[2.5rem] border border-white bg-white/40 p-5 shadow-xl backdrop-blur-md">
-              <div className="aspect-[4/3] overflow-hidden rounded-[2rem] shadow-inner">
+            <div className="overflow-hidden rounded-xl border border-zinc-200 bg-white p-5 shadow-xl backdrop-blur-md">
+              <div className="aspect-4/3 overflow-hidden rounded-xl shadow-inner">
                 <img 
                   src="https://stmcz.co.uk/img/about-2.jpg" 
                   alt="Team collaboration" 
-                  className="h-full w-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700 hover:scale-105" 
+                  className="h-full w-full object-cover grayscale-20 transition-all duration-700 hover:scale-105 hover:grayscale-0" 
                 />
               </div>
               
               <div className="mt-8 space-y-6 px-2 pb-2">
                 <div className="flex gap-5 items-start">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#664A00] text-white shadow-lg shadow-[#664A00]/20">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-yellow-500 text-zinc-900 shadow-lg shadow-yellow-500/20">
                     <FaShieldAlt size={22} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-[#3A2A00] text-lg">Privacy First</h3>
-                    <p className="text-sm leading-relaxed text-[#664A00]/70">Your information is encrypted and only accessible by our recruitment leads.</p>
+                    <h3 className="text-lg font-bold text-zinc-900">Privacy First</h3>
+                    <p className="text-sm leading-relaxed text-zinc-500">Your information is encrypted and only accessible by our recruitment leads.</p>
                   </div>
                 </div>
 
-                <div className="rounded-[2rem] bg-gradient-to-br from-[#664A00]/10 to-transparent p-7 border border-[#664A00]/5">
-                  <h4 className="text-xs font-black uppercase tracking-widest text-[#664A00]">The Process</h4>
+                <div className="rounded-xl border border-zinc-200 bg-linear-to-br from-zinc-100 to-transparent p-7">
+                  <h4 className="text-xs font-black uppercase tracking-widest text-yellow-500">The Process</h4>
                   <ul className="mt-5 space-y-4">
                     {[
                       { id: '01', text: 'CV Screening by HR' },
@@ -208,10 +197,10 @@ export default function Apply() {
                       { id: '03', text: 'Technical Assessment' }
                     ].map((step) => (
                       <li key={step.id} className="flex items-center gap-4">
-                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[10px] font-bold text-[#664A00] shadow-sm">
+                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[10px] font-bold text-zinc-700 shadow-sm ring-1 ring-zinc-200">
                           {step.id}
                         </span>
-                        <span className="text-sm font-semibold text-[#3A2A00]">{step.text}</span>
+                        <span className="text-sm font-semibold text-zinc-800">{step.text}</span>
                       </li>
                     ))}
                   </ul>
