@@ -4,6 +4,7 @@ import Servicess from '../components/home/Servicess'
 import AboutSection from '../components/home/AboutSection'
 import Process from '../components/home/Process'
 import WhyChoose from '../components/home/WhyChoose'
+import FaqSection from '../components/home/FaqSection'
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
         <WhyChoose/>
         <AboutSection/>
         <Process/>
+        <FaqSection/>
     </div>
   )
 }

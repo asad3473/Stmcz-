@@ -46,7 +46,7 @@ const HeroSlider = () => {
 
   return (
     <section
-      className="relative w-full h-[87dvh] overflow-hidden bg-gray-900"
+      className="relative w-full h-[100vh] overflow-hidden bg-gray-900"
       onMouseEnter={stopAutoSlide}
       onMouseLeave={startAutoSlide}
       aria-roledescription="carousel"

@@ -33,9 +33,9 @@ const Servicess = () => {
       <div className="max-w-7xl mx-auto">
 
         {/* Section Header */}
-        <div className="mb-16 text-center">
+        <div className="mb-10 md:mb-16 text-center">
           <h4 className="text-yellow-500 font-bold uppercase tracking-[0.3em] text-xs mb-3">Our Expertise</h4>
-          <h2 className="text-4xl md:text-5xl font-black text-black">
+          <h2 className="text-2xl md:text-5xl font-black text-black">
             Specialized <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-yellow-300">Consultancy Solutions</span>
           </h2>
           <div className="h-1 w-24 bg-yellow-500 mx-auto mt-6 rounded-full" />
