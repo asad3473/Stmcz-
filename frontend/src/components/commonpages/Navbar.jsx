@@ -87,17 +87,17 @@ const Navbar = () => {
 
       {/* MOBILE MENU OVERLAY */}
       <div className={`
-        fixed inset-0 bg-white z-[-1] lg:hidden transition-all duration-500 ease-in-out
+        fixed inset-0 bg-white z-[-1]  lg:hidden transition-all duration-500 ease-in-out
         ${isMobileMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'}
       `}>
         <div className="flex flex-col h-full pt-24 px-8 pb-10 overflow-y-auto">
-           <ul className="flex flex-col gap-8 text-2xl text-black list-none p-0 font-bold">
+           <ul className="flex flex-col gap-3 text-2xl text-black list-none p-0 ">
              <li><MobileLink to="/" label="Home" onClick={() => setIsMobileMenuOpen(false)} /></li>
              <li><MobileLink to="/about" label="About" onClick={() => setIsMobileMenuOpen(false)} /></li>
              
-             <li className="border-t border-gold/20 pt-6">
-                <span className="text-[#B8860B] text-xs uppercase tracking-widest mb-4 block font-black">Services & Support</span>
-                <ul className="flex flex-col gap-6 pl-4 border-l-2 border-gold/20">
+             <li className="border-t border-gold/20 pt-3">
+                <span className="text-[#B8860B] text-xs uppercase  mb-2 block ">Services & Support</span>
+                <ul className="flex flex-col gap-3 pl-4 border-l-2 border-gold/20">
                   <li><MobileLink to="/apply" label="Apply" onClick={() => setIsMobileMenuOpen(false)} /></li>
                   <li><MobileLink to="/employee-support" label="Employee Support" onClick={() => setIsMobileMenuOpen(false)} /></li>
                   <li><MobileLink to="/tiered-system" label="Tiered System" onClick={() => setIsMobileMenuOpen(false)} /></li>
