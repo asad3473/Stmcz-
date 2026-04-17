@@ -128,7 +128,8 @@ const WhyChoose = () => {
                 loading="lazy"
                 width={320}
                 height={320}
-                className="relative z-10 rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-[6px] border-zinc-900"
+              
+                className="relative z-10 rounded-full w-64 h-64 md:w-80 md:h-80 bg-cover  border-[6px] border-zinc-900"
               />
 
             </div>
